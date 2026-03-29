@@ -1,0 +1,5 @@
+{
+  "name": "Bowling Pro Analyse",
+  "description": "Analyze bowling scoreboard photos and generate professional performance reports using AI.",
+  "requestFramePermissions": ["camera"]
+}

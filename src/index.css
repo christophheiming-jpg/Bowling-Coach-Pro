@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
+  
+  /* Override default colors to use RGB instead of OKLCH for compatibility with html2pdf.js */
+  --color-blue-400: rgb(96, 165, 250);
+  --color-blue-500: rgb(59, 130, 246);
+  --color-blue-600: rgb(37, 99, 235);
+  --color-blue-900: rgb(30, 58, 138);
+  
+  --color-green-50: rgb(240, 253, 244);
+  --color-green-200: rgb(187, 247, 208);
+  --color-green-400: rgb(74, 222, 128);
+  --color-green-500: rgb(34, 197, 94);
+  --color-green-600: rgb(22, 163, 74);
+  --color-green-700: rgb(21, 128, 61);
+  --color-green-800: rgb(22, 101, 52);
+  
+  --color-red-50: rgb(254, 242, 242);
+  --color-red-200: rgb(254, 202, 202);
+  --color-red-400: rgb(248, 113, 113);
+  --color-red-500: rgb(239, 68, 68);
+  --color-red-700: rgb(185, 28, 28);
+  --color-red-800: rgb(153, 27, 27);
+  
+  --color-gray-50: rgb(249, 250, 251);
+  --color-gray-100: rgb(243, 244, 246);
+  --color-gray-200: rgb(229, 231, 235);
+  --color-gray-300: rgb(209, 213, 219);
+  --color-gray-400: rgb(156, 163, 175);
+  --color-gray-500: rgb(107, 114, 128);
+  --color-gray-600: rgb(75, 85, 99);
+  --color-gray-800: rgb(31, 41, 55);
+  --color-gray-900: rgb(17, 24, 39);
+
+  /* Additional colors used in PDF */
+  --color-blue-200: rgb(191, 219, 254);
+  --color-slate-50: rgb(248, 250, 252);
+  --color-slate-100: rgb(241, 245, 249);
+  --color-slate-200: rgb(226, 232, 240);
+  --color-slate-300: rgb(203, 213, 225);
+  --color-slate-400: rgb(148, 163, 184);
+  --color-slate-500: rgb(100, 116, 139);
+  --color-slate-600: rgb(71, 85, 105);
+  --color-slate-700: rgb(51, 65, 85);
+  --color-slate-800: rgb(30, 41, 59);
+  --color-slate-900: rgb(15, 23, 42);
+}
+
+:root {
+  --ios-blue: #0A84FF;
+  --ios-green: #30D158;
+  --ios-red: #FF453A;
+  --ios-gray: rgba(28, 28, 30, 0.8);
+  --glass-bg: rgba(20, 20, 25, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.15);
+  --text-sec: #8E8E93;
+}
+
+html, body { 
+  margin: 0; padding: 0; height: 100%; width: 100%;
+}
+
+body { 
+  background-color: #0a192f; /* Dark Blue */
+  color: white;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+.tab-bar { 
+  background: #0a192f; 
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-box { 
+  background: rgba(255, 255, 255, 0.03); 
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.loader {
+  border: 3px solid rgba(255,255,255,0.1);
+  border-top: 3px solid var(--ios-blue);
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  animation: spin 1s linear infinite;
+  margin: 0 auto;
+}
+@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+/* PDF Layout Styles */
+.pdf-page {
+  background: white;
+  color: #1a3a5f;
+  padding: 25mm 20mm;
+  box-sizing: border-box;
+  width: 210mm;
+  min-height: 297mm;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  position: relative;
+}
